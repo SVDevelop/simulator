@@ -10,25 +10,74 @@ body {
   background-color: #000;
   perspective: 2500px;
   position: relative;
+  font-size: 10px;
+}
+.protractor-360 {
+  width: 100%;
+  height: 100%;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  stroke: #fff;
+}
+.protractor-360 .segment-group {
+  transform: rotate(45deg);
+  transform-origin: 300px 300px;
+}
+.protractor-360 #line-1 {
+  fill: none;
+  stroke-width: 4;
+  /* ширина линий */
+}
+.protractor-360 .primary-line,
+.protractor-360 .secondary-line,
+.protractor-360 .tertiary-line {
+  shape-rendering: geometricPrecision;
+  stroke-dashoffset: 10;
+}
+.protractor-360 .primary-line {
+  stroke-dasharray: 0, 250, 12;
+}
+.protractor-360 .secondary-line {
+  stroke-dasharray: 0, 270, 16;
+}
+.protractor-360 textPath {
+  text-anchor: start;
+  text-align: start;
+}
+.protractor-360 .clockwise-text {
+  transform: translate(85px, 85px);
 }
 .container {
-  width: 640px;
-  height: 480px;
-  margin: 50px auto;
+  width: 100vw;
+  height: 100vh;
+  margin: 0px auto;
   overflow: hidden;
   background-color: #000;
   position: relative;
 }
+.panel__wrapper {
+  width: 740px;
+  height: 480px;
+  font-size: 1.1rem;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  background-color: #000;
+  position: absolute;
+}
 .center-display {
   position: absolute;
-  width: 280px;
-  height: 290px;
-  top: 50%;
+  width: 350px;
+  height: 330px;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 2px solid red;
+  border: none;
   border-radius: 5%;
   display: block;
+  background: #fff url('../img/center-d.png') 0 0 no-repeat;
+  background-size: cover;
 }
 .left-panel {
   position: absolute;
@@ -46,7 +95,8 @@ body {
   width: 65px;
   height: 70px;
   background: #000;
-  top: 30%;
+  top: 50%;
+  transform: translateY(-50%);
   left: calc(53.33333333px);
   z-index: 1;
 }
@@ -278,7 +328,8 @@ body {
   width: 70px;
   height: 70px;
   background: #000;
-  top: 30%;
+  top: 50%;
+  transform: translateY(-50%);
   right: calc(47.05882353px);
   z-index: 1;
 }
@@ -587,7 +638,8 @@ body {
 }
 .right-panel--fixed {
   position: absolute;
-  top: 30px;
+  top: 50%;
+  transform: translateY(-50%);
   right: 0;
   width: calc(60px);
   height: 300px;
@@ -611,17 +663,6 @@ body {
   border-left: 50px solid transparent;
   border-right: 50px solid transparent;
   border-bottom: 100px solid #000;
-}
-.speedometr {
-  width: 350px;
-  height: 350px;
-  border: solid 4px transparent;
-  border-radius: 50%;
-  left: 50%;
-  bottom: -80%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  background: grey;
 }
 .triangle {
   position: absolute;
@@ -650,57 +691,207 @@ body {
   border-right-color: transparent;
   border-bottom-color: transparent;
 }
+.speedometr {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border: solid 4px transparent;
+  border-radius: 50%;
+  left: 50%;
+  bottom: 100px;
+  transform: translateX(-50%);
+  background: grey;
+}
+.speedometr:before {
+  content: '';
+  position: absolute;
+  width: 320px;
+  height: 300px;
+  background: #000;
+  right: -10px;
+  top: 30%;
+}
 .ris-w {
-  /*    áåëûå ðèñêè*/
+  /* с цыфрами */
   position: absolute;
   width: 15px;
   height: 1.5px;
   background-color: #fff;
 }
 .ris-w:nth-child(1) {
-  top: 60px;
-  left: 45px;
-  transform: rotate(40deg);
+  top: 50%;
+  left: 0;
+  transform: rotate(0deg);
 }
 .ris-w:nth-child(2) {
-  top: 60px;
-  left: 45px;
-  transform: rotate(40deg);
+  top: 45%;
+  left: 1px;
+  transform: rotate(11.25deg);
 }
 .ris-w:nth-child(3) {
-  top: 35px;
-  left: 75px;
-  transform: rotate(45deg);
+  top: 40%;
+  left: 2px;
+  transform: rotate(22.5deg);
 }
 .ris-w:nth-child(4) {
-  top: 12px;
-  left: 130px;
-  transform: rotate(70deg);
-  animation-delay: 1.0s;
+  top: 35%;
+  left: 7px;
+  transform: rotate(33.75deg);
 }
 .ris-w:nth-child(5) {
-  top: 12px;
-  right: 130px;
-  transform: rotate(-70deg);
-  animation-delay: .2s;
+  top: 30%;
+  left: 14px;
+  transform: rotate(45deg);
 }
 .ris-w:nth-child(6) {
-  top: 35px;
-  right: 75px;
-  transform: rotate(-45deg);
-  animation-delay: .9s;
+  top: 25%;
+  left: 22px;
+  transform: rotate(56.25deg);
 }
 .ris-w:nth-child(7) {
-  top: 60px;
-  right: 45px;
-  transform: rotate(-40deg);
+  top: 20%;
+  left: 33px;
+  transform: rotate(67.5deg);
 }
 .ris-w:nth-child(8) {
-  /*   top: 90px;
-  right:82px;
-  transform: rotate(-180deg); */
+  top: 15%;
+  left: 49px;
+  transform: rotate(78, 75deg);
+}
+.ris-w:nth-child(9) {
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  transform: rotate(90deg);
+}
+.ris-w:nth-child(10) {
+  top: 6%;
+  left: 90px;
+  transform: rotate(-78, 75deg);
+}
+.ris-w:nth-child(11) {
+  top: 5%;
+  left: 100px;
+  transform: rotate(-67.5deg);
+}
+.ris-w:nth-child(12) {
+  top: 4%;
+  left: 132px;
+  transform: rotate(-56.25deg);
+}
+.ris-w:nth-child(13) {
+  top: 10%;
+  right: 82px;
+  transform: rotate(-45deg);
+}
+.ris-w:nth-child(14) {
+  top: 15%;
+  right: 82px;
+  transform: rotate(-33.75deg);
+}
+.ris-w:nth-child(15) {
+  top: 20%;
+  right: 82px;
+  transform: rotate(-22.5deg);
+}
+.ris-w:nth-child(16) {
+  top: 45%;
+  right: 1px;
+  transform: rotate(-11.25deg);
+}
+.ris-w:nth-child(17) {
+  top: 50%;
+  right: 0px;
+  transform: rotate(0deg);
+}
+.ris-w:nth-child(18) {
+  bottom: 50%;
+  left: 0;
+  transform: rotate(0deg);
+}
+.ris-w:nth-child(19) {
+  bottom: 45%;
+  left: 1px;
+  transform: rotate(11.25deg);
+}
+.ris-w:nth-child(20) {
+  bottom: 40%;
+  left: 2px;
+  transform: rotate(22.5deg);
+}
+.ris-w:nth-child(21) {
+  bottom: 35%;
+  left: 7px;
+  transform: rotate(33.75deg);
+}
+.ris-w:nth-child(22) {
+  bottom: 30%;
+  left: 14px;
+  transform: rotate(45deg);
+}
+.ris-w:nth-child(23) {
+  bottom: 25%;
+  left: 22px;
+  transform: rotate(56.25deg);
+}
+.ris-w:nth-child(24) {
+  bottom: 20%;
+  left: 33px;
+  transform: rotate(67.5deg);
+}
+.ris-w:nth-child(25) {
+  bottom: 15%;
+  left: 49px;
+  transform: rotate(78, 75deg);
+}
+.ris-w:nth-child(26) {
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  transform: rotate(90deg);
+}
+.ris-w:nth-child(27) {
+  bottom: 6%;
+  left: 90px;
+  transform: rotate(-78, 75deg);
+}
+.ris-w:nth-child(28) {
+  bottom: 5%;
+  left: 100px;
+  transform: rotate(-67.5deg);
+}
+.ris-w:nth-child(29) {
+  bottom: 4%;
+  left: 132px;
+  transform: rotate(-56.25deg);
+}
+.ris-w:nth-child(30) {
+  bottom: 10%;
+  right: 82px;
+  transform: rotate(-45deg);
+}
+.ris-w:nth-child(31) {
+  bottom: 15%;
+  right: 82px;
+  transform: rotate(-33.75deg);
+}
+.ris-w:nth-child(32) {
+  bottom: 20%;
+  right: 82px;
+  transform: rotate(-22.5deg);
+}
+.ris-w:nth-child(33) {
+  bottom: 45%;
+  right: 1px;
+  transform: rotate(-11.25deg);
+}
+.ris-w:nth-child(34) {
+  bottom: 50%;
+  right: 0px;
+  transform: rotate(0deg);
 }
 .ris {
+  /* промежуточные */
   width: 16px;
   height: 4px;
   background-color: #fff;
@@ -736,6 +927,7 @@ body {
   right: 30px;
   transform: rotate(-40deg);
 }
+/* значения 0-360 */
 span {
   color: #fff;
   font-size: 15px;
