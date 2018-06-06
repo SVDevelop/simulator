@@ -19,6 +19,17 @@ body {
   background-color: #000;
   position: relative;
 }
+.center-display {
+  position: absolute;
+  width: 280px;
+  height: 290px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid red;
+  border-radius: 5%;
+  display: block;
+}
 .left-panel {
   position: absolute;
   left: 80px;
@@ -319,6 +330,8 @@ body {
   background: #fff;
 }
 .right-panel__item--fixed {
+  margin: 0;
+  padding: 0;
   position: absolute;
   left: 10px;
   width: 12px;
@@ -329,76 +342,77 @@ body {
 .right-panel__item--fixed:after {
   content: '';
   position: absolute;
-  top: -7px;
-  left: 2px;
-}
-.right-panel__item--fixed:nth-child(1) {
-  top: 33%;
-}
-.right-panel__item--fixed:nth-child(1):after {
-  content: "asd";
+  top: -5px;
+  left: -8px;
+  font-size: 12px;
 }
 .right-panel__item--fixed:nth-child(2) {
-  top: 6%;
+  top: 3%;
 }
 .right-panel__item--fixed:nth-child(2):after {
-  content: "";
+  content: "6";
 }
 .right-panel__item--fixed:nth-child(3) {
-  top: 10%;
+  top: 6%;
 }
 .right-panel__item--fixed:nth-child(3):after {
   content: "";
 }
 .right-panel__item--fixed:nth-child(4) {
-  top: 17%;
+  top: 10%;
 }
 .right-panel__item--fixed:nth-child(4):after {
-  content: "";
+  content: "2";
 }
 .right-panel__item--fixed:nth-child(5) {
-  top: 25%;
+  top: 17%;
 }
 .right-panel__item--fixed:nth-child(5):after {
   content: "";
 }
 .right-panel__item--fixed:nth-child(6) {
+  top: 25%;
+}
+.right-panel__item--fixed:nth-child(6):after {
+  content: "1";
+}
+.right-panel__item--fixed:nth-child(7) {
   /* центральная */
   top: 50%;
   width: 40px;
-}
-.right-panel__item--fixed:nth-child(6):after {
-  content: "";
-}
-.right-panel__item--fixed:nth-child(7) {
-  bottom: 25%;
 }
 .right-panel__item--fixed:nth-child(7):after {
   content: "";
 }
 .right-panel__item--fixed:nth-child(8) {
-  bottom: 17%;
+  bottom: 25%;
 }
 .right-panel__item--fixed:nth-child(8):after {
-  content: "";
+  content: "1";
 }
 .right-panel__item--fixed:nth-child(9) {
-  bottom: 10%;
+  bottom: 17%;
 }
 .right-panel__item--fixed:nth-child(9):after {
   content: "";
 }
 .right-panel__item--fixed:nth-child(10) {
-  bottom: 6%;
+  bottom: 10%;
 }
 .right-panel__item--fixed:nth-child(10):after {
-  content: "";
+  content: "2";
 }
 .right-panel__item--fixed:nth-child(11) {
-  bottom: 3%;
+  bottom: 6%;
 }
 .right-panel__item--fixed:nth-child(11):after {
   content: "";
+}
+.right-panel__item--fixed:nth-child(12) {
+  bottom: 3%;
+}
+.right-panel__item--fixed:nth-child(12):after {
+  content: "6";
 }
 .right-panel__item:after {
   content: '';
@@ -557,14 +571,15 @@ body {
   content: "42600";
 }
 .right-panel__strelka {
-  width: 125px;
+  width: 110px;
   height: 8px;
   background-color: #fff;
   border-radius: 50% 5px 5px 50%;
   position: absolute;
   right: -50px;
-  top: calc(46%);
-  transform: rotate(-10deg);
+  top: 49%;
+  transform: rotate(30deg);
+  /* угол стрелки */
   transform-origin: 100%;
   animation-name: strelka;
   transition: .6s;
@@ -602,8 +617,10 @@ body {
   height: 350px;
   border: solid 4px transparent;
   border-radius: 50%;
-  margin: 300px auto;
-  position: relative;
+  left: 50%;
+  bottom: -80%;
+  transform: translate(-50%, -50%);
+  position: absolute;
   background: grey;
 }
 .triangle {
@@ -633,15 +650,6 @@ body {
   border-right-color: transparent;
   border-bottom-color: transparent;
 }
-.black {
-  /* обрезает низ спидометра */
-  width: 100%;
-  height: 95px;
-  background: #000;
-  position: absolute;
-  bottom: -5px;
-  left: 0px;
-}
 .ris-w {
   /*    áåëûå ðèñêè*/
   position: absolute;
@@ -650,9 +658,9 @@ body {
   background-color: #fff;
 }
 .ris-w:nth-child(1) {
-  /*   top:60px;
-  left:45px;
-  transform: rotate(40deg); */
+  top: 60px;
+  left: 45px;
+  transform: rotate(40deg);
 }
 .ris-w:nth-child(2) {
   top: 60px;
